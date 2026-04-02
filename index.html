@@ -4,137 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TripPhoto - 旅の写真を地図で振り返る</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1d1d1f; background: #fff; }
-  .hero {
-    background: linear-gradient(135deg, #0071e3 0%, #34c759 100%);
-    color: #fff;
-    text-align: center;
-    padding: 24px 20px 16px;
-  }
-  .hero h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
-  .hero p { font-size: 15px; margin-top: 6px; opacity: 0.92; }
-  .carousel-wrapper {
-    margin: 0 20px;
-    background: #f5f5f7;
-    padding: 12px 0 0;
-  }
-  .carousel {
-    overflow: hidden;
-  }
-  .carousel-track {
-    display: flex;
-    transition: transform 0.6s ease;
-  }
-  .carousel-track a {
-    width: 100%;
-    flex-shrink: 0;
-    display: block;
-  }
-  .carousel-track img {
-    width: 100%;
-    height: 50vh;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-  .carousel-dots {
-    text-align: center;
-    padding: 10px 0;
-  }
-  .carousel-dots button {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: none;
-    background: #c0c0c0;
-    margin: 0 5px;
-    padding: 0;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  .carousel-dots button.active {
-    background: #0071e3;
-  }
-  nav {
-    text-align: center;
-    padding: 16px 20px;
-    background: #f5f5f7;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  nav a {
-    color: #0071e3;
-    text-decoration: none;
-    font-size: 15px;
-    margin: 0 16px;
-    font-weight: 500;
-  }
-  nav a:hover { text-decoration: underline; }
-  .content {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 24px 20px;
-  }
-  .content p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #424245;
-    margin-bottom: 16px;
-  }
-  .feature {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    border-top: 1px solid #e0e0e0;
-  }
-  .feature h2 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #1d1d1f;
-  }
-  .feature p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #424245;
-    margin-bottom: 12px;
-  }
-  .feature img {
-    width: 100%;
-    border-radius: 12px;
-    margin-top: 16px;
-  }
-  .appstore-btn {
-    display: inline-block;
-    margin-top: 24px;
-    padding: 14px 32px;
-    background: #1d1d1f;
-    color: #fff;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: default;
-    opacity: 0.85;
-  }
-  .appstore-btn svg { vertical-align: middle; margin-right: 8px; }
-  .appstore-btn span { vertical-align: middle; }
-  .coming-soon {
-    font-size: 12px;
-    color: #86868b;
-    margin-top: 8px;
-  }
-  footer {
-    text-align: center;
-    padding: 32px 20px;
-    font-size: 13px;
-    color: #86868b;
-    border-top: 1px solid #e0e0e0;
-  }
-  footer a { color: #0071e3; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -146,7 +16,7 @@
 
 <div class="hero">
   <h1>TripPhoto</h1>
-  <p>旅の写真を地図で振り返る</p>
+  <p>旅の写真を地図の軌跡で楽しもう</p>
 </div>
 
 <div class="carousel-wrapper">
@@ -163,7 +33,8 @@
 </div>
 
 <div class="content">
-  <p>TripPhoto は、旅行中に撮影した写真を地図上に自動配置し、旅の記録を直感的に振り返ることができるiOSアプリです。写真のGPS情報をもとに、撮影場所・移動ルート・写真のグルーピングをすべて自動で行います。</p>
+  <p>TripPhoto は、旅の写真を「撮った順」に並べるだけでなく、<strong>どこを移動し、どこで写真を撮ったのか</strong>を地図上でたどりながら振り返れるiOSアプリです。</p>
+  <p>旅行のあと、写真フォルダを眺めるだけでは思い出しにくい<strong>旅の流れ</strong>や<strong>移動の記憶</strong>を、写真と地図を重ねて自然に思い出せます。</p>
   <div style="text-align:center;">
     <a class="appstore-btn" href="#" onclick="return false;">
       <svg width="20" height="24" viewBox="0 0 20 24" fill="white"><path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.52-3.23 0-1.44.65-2.2.46-3.06-.4C3.79 16.17 4.36 9.53 8.86 9.28c1.27.06 2.15.72 2.9.76.98-.2 1.92-.78 2.97-.7 1.26.1 2.2.6 2.83 1.53-2.59 1.55-1.97 4.96.35 5.91-.46 1.22-.68 1.78-1.28 2.86l.42.64zM12.57 9.15c-.17-2.2 1.68-4.1 3.72-4.28.28 2.5-2.26 4.38-3.72 4.28z"/></svg>
@@ -174,26 +45,26 @@
 </div>
 
 <div class="feature" id="overview">
-  <h2>すべての機能をひと目で</h2>
-  <p>マップ表示、写真ビューア、移動ルート、グループ管理など、TripPhoto の主要機能を一画面で確認できます。旅行ごとに写真を整理し、いつでも思い出を振り返れます。</p>
+  <h2>旅ごとに写真をまとめる</h2>
+  <p>開始日時と終了日時を指定して、ひとつの旅を定義。写真ライブラリ全体ではなく、<strong>その旅に属する写真だけ</strong>を取り出して見返せます。マップ表示、写真ビューア、移動ルート、グループ管理をひとつのアプリに。</p>
   <img src="image_1200.jpg" alt="全体マップと機能一覧">
 </div>
 
 <div class="feature" id="map">
-  <h2>旅の軌跡を地図で確認</h2>
-  <p>写真のGPS情報を読み取り、撮影場所を地図上に自動でプロットします。旅行全体のルートが一目でわかり、どこでどんな写真を撮ったかをすぐに確認できます。地図上のサムネイルをタップすれば、その場所の写真を閲覧できます。</p>
+  <h2>地図上で旅をたどる</h2>
+  <p>写真の撮影場所を地図上に配置し、移動の流れを<strong>軌跡と矢印</strong>で表示します。「どこへ向かって進んだのか」「どの順番で街を回ったのか」が、写真と一緒に見えてきます。地図上のサムネイルをタップすれば、その場所の写真をすぐに閲覧できます。</p>
   <img src="combined1_1200.jpg" alt="旅の軌跡マップ">
 </div>
 
 <div class="feature" id="photo">
-  <h2>写真ビューアとグループ管理</h2>
-  <p>撮影した写真を大きく表示しながら、下部の地図で撮影場所を同時に確認できます。また、類似した写真を自動でグルーピング。大量の旅行写真も効率よく整理できます。</p>
+  <h2>旅の流れの中で写真を見返す</h2>
+  <p>単に一覧で写真を見るのではなく、<strong>旅の道筋の中の一枚</strong>として写真を見返せます。地図上の場所と写真が結びつくことで、そのときの空気や移動の感覚まで思い出しやすくなります。似たような写真が続いてしまったときも、旅の単位で重複写真を整理できます。</p>
   <img src="combined2_1200.jpg" alt="写真ビューアとグループ管理">
 </div>
 
 <div class="feature" id="route">
-  <h2>移動ルートの詳細表示</h2>
-  <p>撮影時刻をもとに移動経路をピンクの矢印で表示。訪れた場所の順番や滞在時間が直感的にわかります。クラスター表示により、同じスポットで撮影された写真をまとめて確認できます。</p>
+  <h2>移動ルートを詳細に表示</h2>
+  <p>撮影時刻をもとに移動経路を矢印で表示。訪れた場所の順番や滞在時間が直感的にわかります。クラスター表示により、同じスポットで撮影された写真の枚数もひと目で把握できます。</p>
   <img src="combined3_1200.jpg" alt="移動ルートの表示">
 </div>
 
@@ -201,6 +72,28 @@
   <h2>地図と連動するフォトビューア</h2>
   <p>写真を大画面で楽しみながら、画面下部のミニマップで撮影場所をリアルタイムに確認。写真をスワイプするたびに地図上のハイライトも連動して移動します。旅の臨場感をそのまま追体験できます。</p>
   <img src="combined4_1200.jpg" alt="地図連動フォトビューア">
+</div>
+
+<div class="feature" id="target">
+  <h2>こんな人に向いています</h2>
+  <ul>
+    <li>旅行のたびに写真をたくさん撮る人</li>
+    <li>写真を見返すのが好きな人</li>
+    <li>「どこで撮ったか」も一緒に振り返りたい人</li>
+    <li>旅の流れを地図で思い出したい人</li>
+    <li>写真整理をもう少し気持ちよくしたい人</li>
+  </ul>
+</div>
+
+<div class="feature" id="howto">
+  <h2>使い方はシンプル</h2>
+  <ol>
+    <li>旅の名前をつける</li>
+    <li>開始日時と終了日時を決める</li>
+    <li>その期間の写真を読み込む</li>
+    <li>地図上で軌跡をたどりながら写真を見る</li>
+  </ol>
+  <p>これだけで、旅の写真がただの一覧ではなく、<strong>地図の上に残る記録</strong>になります。</p>
 </div>
 
 <footer>
