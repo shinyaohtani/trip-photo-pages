@@ -7,7 +7,7 @@ var SITE = {
   nav: [
     { href: 'index.html', label: 'TripPhoto' },
     { href: 'support.html', label: 'サポート' },
-    { href: 'privacy.html', label: 'プライバシーポリシー' }
+    { href: 'privacy.html', label: 'プライバシー' }
   ],
   appStoreUrl: '#',
   appStoreLabel: '近日公開予定'
