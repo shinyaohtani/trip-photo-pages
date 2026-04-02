@@ -3,21 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TripPhoto - Privacy Policy</title>
+<title>TripPhoto - プライバシーポリシー</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html">TripPhoto</a>
-  <a href="support.html">サポート</a>
-  <a href="privacy.html">プライバシーポリシー</a>
-</nav>
+<nav id="site-nav"></nav>
 
-<div class="hero">
-  <h1>TripPhoto</h1>
-  <p>旅の写真を地図で振り返る</p>
-</div>
+<div class="hero" id="site-hero"></div>
 
 <div class="carousel-wrapper">
   <div class="carousel">
@@ -65,31 +58,8 @@
   </div>
 </div>
 
-<footer>
-  &copy; 2026 TripPhoto &middot; <a href="support.html">サポート</a>
-</footer>
+<footer id="site-footer"></footer>
 
-<script>
-(function() {
-  var track = document.getElementById('carouselTrack');
-  var dots = document.getElementById('carouselDots');
-  var count = track.querySelectorAll('img').length;
-  var current = 0;
-  for (var i = 0; i < count; i++) {
-    var btn = document.createElement('button');
-    btn.dataset.index = i;
-    if (i === 0) btn.classList.add('active');
-    btn.addEventListener('click', function() { goTo(Number(this.dataset.index)); });
-    dots.appendChild(btn);
-  }
-  function goTo(n) {
-    current = (n + count) % count;
-    track.style.transform = 'translateX(-' + (current * 100) + '%)';
-    var btns = dots.querySelectorAll('button');
-    for (var j = 0; j < btns.length; j++) btns[j].classList.toggle('active', j === current);
-  }
-  setInterval(function() { goTo(current + 1); }, 4000);
-})();
-</script>
+<script src="common.js"></script>
 </body>
 </html>
