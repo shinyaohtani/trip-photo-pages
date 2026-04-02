@@ -46,7 +46,7 @@ function initCarousel() {
   var track = document.getElementById('carouselTrack');
   var dots = document.getElementById('carouselDots');
   if (!track || !dots) return;
-  var slides = track.querySelectorAll('a, img');
+  var slides = track.children;
   var count = slides.length;
   var current = 0;
   for (var i = 0; i < count; i++) {
