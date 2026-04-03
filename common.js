@@ -10,7 +10,8 @@ var SITE = {
     { href: 'privacy.html', label: 'プライバシー' }
   ],
   appStoreUrl: '#',
-  appStoreLabel: '近日公開予定'
+  appStoreLabel: '近日公開予定',
+  supportEmail: 'aabce.apps.support@gmail.com'
 };
 
 /* nav を生成 */
@@ -65,10 +66,55 @@ function initCarousel() {
   setInterval(function() { goTo(current + 1); }, 4000);
 }
 
+/* 8桁の問い合わせIDを生成 */
+function generateInquiryId() {
+  var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  var id = '';
+  for (var i = 0; i < 8; i++) {
+    id += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return id;
+}
+
+/* mailto リンクにテンプレートを設定 */
+function initMailLinks() {
+  var links = document.querySelectorAll('a[data-mail-template]');
+  links.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var id = generateInquiryId();
+      var subject = '【TripPhoto】お問い合わせ（ID: ' + id + '）';
+      var body = [
+        '※ 以下のテンプレートをご利用ください。',
+        '',
+        '■ 問い合わせID: ' + id,
+        '■ アプリ名: TripPhoto',
+        '■ お使いの端末:（例: iPhone 16）',
+        '■ iOSバージョン:（例: iOS 18.0）',
+        '',
+        '■ お問い合わせ種別:',
+        '  □ 不具合の報告',
+        '  □ 機能のご要望',
+        '  □ 使い方のご質問',
+        '  □ その他',
+        '',
+        '■ 詳細:',
+        '',
+        ''
+      ].join('\n');
+      var mailto = 'mailto:' + SITE.supportEmail
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
+    });
+  });
+}
+
 /* 初期化 */
 document.addEventListener('DOMContentLoaded', function() {
   renderNav();
   renderHero();
   renderFooter();
   initCarousel();
+  initMailLinks();
 });
