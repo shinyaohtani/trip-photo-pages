@@ -11,14 +11,33 @@ var SITE = {
   ],
   appStoreUrl: '#',
   appStoreLabel: '近日公開予定',
-  supportEmail: 'aabce.apps.support@gmail.com'
+  supportEmail: 'aabce.apps.support@gmail.com',
+  icon: 'icon_masked.png'
 };
+
+/* ファビコンを設定 */
+function setFavicon() {
+  var link = document.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/png';
+  link.href = SITE.icon;
+  document.head.appendChild(link);
+  var apple = document.createElement('link');
+  apple.rel = 'apple-touch-icon';
+  apple.href = SITE.icon;
+  document.head.appendChild(apple);
+}
 
 /* nav を生成 */
 function renderNav() {
   var el = document.getElementById('site-nav');
   if (!el) return;
   el.innerHTML = SITE.nav.map(function(item) {
+    if (item.href === 'index.html') {
+      return '<a href="' + item.href + '" class="nav-brand">'
+        + '<img src="' + SITE.icon + '" alt="" class="nav-icon">'
+        + item.label + '</a>';
+    }
     return '<a href="' + item.href + '">' + item.label + '</a>';
   }).join('');
 }
@@ -27,7 +46,8 @@ function renderNav() {
 function renderHero() {
   var el = document.getElementById('site-hero');
   if (!el) return;
-  el.innerHTML = '<h1>' + SITE.name + '</h1><p>' + SITE.tagline + '</p>';
+  el.innerHTML = '<img src="' + SITE.icon + '" alt="' + SITE.name + '" class="hero-icon">'
+    + '<h1>' + SITE.name + '</h1><p>' + SITE.tagline + '</p>';
 }
 
 /* footer を生成 */
@@ -39,7 +59,8 @@ function renderFooter() {
   }).map(function(item) {
     return '<a href="' + item.href + '">' + item.label + '</a>';
   }).join(' &middot; ');
-  el.innerHTML = SITE.copyright + ' &middot; ' + links;
+  el.innerHTML = '<img src="' + SITE.icon + '" alt="" class="footer-icon">'
+    + SITE.copyright + ' &middot; ' + links;
 }
 
 /* カルーセル */
@@ -112,6 +133,7 @@ function initMailLinks() {
 
 /* 初期化 */
 document.addEventListener('DOMContentLoaded', function() {
+  setFavicon();
   renderNav();
   renderHero();
   renderFooter();
