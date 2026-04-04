@@ -219,7 +219,7 @@ nav a:hover { text-decoration: underline; }
   text-align: center;
 }
 .appstore-link {
-  display: inline-block;
+  display: block;
   text-decoration: none;
 }
 .appstore-icon-large {
