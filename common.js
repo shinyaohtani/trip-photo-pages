@@ -46,8 +46,7 @@ function renderNav() {
 function renderHero() {
   var el = document.getElementById('site-hero');
   if (!el) return;
-  el.innerHTML = '<img src="' + SITE.icon + '" alt="' + SITE.name + '" class="hero-icon">'
-    + '<h1>' + SITE.name + '</h1><p>' + SITE.tagline + '</p>';
+  el.innerHTML = '<h1><img src="' + SITE.icon + '" alt="" class="hero-icon">' + SITE.name + '</h1><p>' + SITE.tagline + '</p>';
 }
 
 /* footer を生成 */
@@ -59,8 +58,7 @@ function renderFooter() {
   }).map(function(item) {
     return '<a href="' + item.href + '">' + item.label + '</a>';
   }).join(' &middot; ');
-  el.innerHTML = '<img src="' + SITE.icon + '" alt="" class="footer-icon">'
-    + SITE.copyright + ' &middot; ' + links;
+  el.innerHTML = SITE.copyright + ' &middot; ' + links;
 }
 
 /* カルーセル */
