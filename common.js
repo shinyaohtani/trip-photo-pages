@@ -15,6 +15,14 @@ var SITE = {
   icon: 'icon_masked.png'
 };
 
+/* Google Fonts を読み込み */
+function loadFonts() {
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap';
+  document.head.appendChild(link);
+}
+
 /* ファビコンを設定 */
 function setFavicon() {
   var link = document.createElement('link');
@@ -128,6 +136,7 @@ function initMailLinks() {
 
 /* 初期化 */
 document.addEventListener('DOMContentLoaded', function() {
+  loadFonts();
   setFavicon();
   renderNav();
   renderHero();
