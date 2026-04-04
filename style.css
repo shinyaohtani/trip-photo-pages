@@ -57,6 +57,9 @@ nav a:hover { text-decoration: underline; }
 
 @media (max-width: 480px) {
   .hero-text h1 { font-size: 40px; }
+  .hero-text p { font-size: 20px; margin-top: -8px; }
+  .hero { gap: 9px; padding: 9px 12px; }
+  .hero-icon { width: 52px; height: 52px; border-radius: 12px; }
 }
 
 /* === Carousel === */
