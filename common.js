@@ -33,12 +33,8 @@ function renderNav() {
   var el = document.getElementById('site-nav');
   if (!el) return;
   el.innerHTML = SITE.nav.map(function(item) {
-    if (item.href === 'index.html') {
-      return '<a href="' + item.href + '" class="nav-brand">'
-        + '<img src="' + SITE.icon + '" alt="" class="nav-icon">'
-        + item.label + '</a>';
-    }
-    return '<a href="' + item.href + '">' + item.label + '</a>';
+    var cls = item.href === 'index.html' ? ' class="nav-brand"' : '';
+    return '<a href="' + item.href + '"' + cls + '>' + item.label + '</a>';
   }).join('');
 }
 
@@ -46,7 +42,8 @@ function renderNav() {
 function renderHero() {
   var el = document.getElementById('site-hero');
   if (!el) return;
-  el.innerHTML = '<h1><img src="' + SITE.icon + '" alt="" class="hero-icon">' + SITE.name + '</h1><p>' + SITE.tagline + '</p>';
+  el.innerHTML = '<img src="' + SITE.icon + '" alt="' + SITE.name + '" class="hero-icon">'
+    + '<div class="hero-text"><h1>' + SITE.name + '</h1><p>' + SITE.tagline + '</p></div>';
 }
 
 /* footer を生成 */

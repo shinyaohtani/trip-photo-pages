@@ -31,33 +31,26 @@ nav a {
 }
 nav a:hover { text-decoration: underline; }
 .nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 4px;
   font-weight: 700;
-}
-.nav-icon {
-  width: 22px;
-  height: 22px;
-  border-radius: 5px;
 }
 
 /* === Hero === */
 .hero {
   background: linear-gradient(135deg, #0078B8 0%, #78B800 100%);
   color: #fff;
-  text-align: center;
-  padding: 24px 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
 }
 .hero-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 7px;
-  vertical-align: middle;
-  margin-right: 6px;
+  width: 92px;
+  height: 92px;
+  border-radius: 20px;
+  flex-shrink: 0;
 }
-.hero h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
-.hero p { font-size: 15px; margin-top: 6px; opacity: 0.92; }
+.hero-text h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+.hero-text p { font-size: 15px; margin-top: 4px; opacity: 0.92; }
 
 /* === Carousel === */
 .carousel-wrapper {
