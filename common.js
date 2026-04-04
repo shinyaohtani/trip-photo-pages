@@ -50,7 +50,7 @@ function renderNav() {
 function renderHero() {
   var el = document.getElementById('site-hero');
   if (!el) return;
-  el.innerHTML = '<img src="' + SITE.icon + '" alt="' + SITE.name + '" class="hero-icon">'
+  el.innerHTML = '<a href="index.html"><img src="' + SITE.icon + '" alt="' + SITE.name + '" class="hero-icon"></a>'
     + '<div class="hero-text"><h1>' + SITE.name + '</h1><p>' + SITE.tagline + '</p></div>';
 }
 
