@@ -2,7 +2,7 @@
 
 var SITE = {
   name: 'TripPhoto',
-  tagline: '旅の写真を地図の軌跡で楽しもう',
+  tagline: 'Enjoy your photos on a map trail.',
   copyright: '&copy; 2026 TripPhoto',
   nav: [
     { href: 'index.html', label: 'TripPhoto' },
@@ -19,7 +19,7 @@ var SITE = {
 function loadFonts() {
   var link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap';
+  link.href = 'https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Plus+Jakarta+Sans:wght@700;800&display=swap';
   document.head.appendChild(link);
 }
 
