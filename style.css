@@ -139,6 +139,8 @@ nav a:hover { text-decoration: underline; }
 }
 .content a { color: #0078B8; text-decoration: none; }
 .content a:hover { text-decoration: underline; }
+.content a.appstore-btn { color: #fff; }
+.content a.appstore-btn:hover { text-decoration: none; }
 .content .updated {
   font-size: 13px;
   color: #86868b;
