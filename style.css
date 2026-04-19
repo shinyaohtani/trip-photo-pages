@@ -216,6 +216,56 @@ nav a:hover { text-decoration: underline; }
 }
 .contact-card a:hover { text-decoration: underline; }
 
+/* === Subscription card (privacy) === */
+.subscription-card {
+  background: #F7F7F7;
+  border-radius: 16px;
+  margin: 20px 0 24px;
+  overflow: hidden;
+}
+.subscription-header {
+  padding: 32px 32px 24px;
+  text-align: center;
+}
+.subscription-plan-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0078B8;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.subscription-price {
+  font-size: 40px;
+  font-weight: 700;
+  color: #1d1d1f;
+  letter-spacing: -0.5px;
+}
+.subscription-period {
+  font-size: 15px;
+  font-weight: 400;
+  color: #86868b;
+}
+.subscription-desc {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #424245;
+  margin-top: 12px;
+}
+.subscription-divider {
+  height: 1px;
+  background: #ECECEC;
+  margin: 0 32px;
+}
+.subscription-notes {
+  padding: 20px 32px 24px;
+}
+.subscription-notes p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #86868b;
+  margin-bottom: 0;
+}
+
 /* === App Store block === */
 .appstore-block {
   text-align: center;
