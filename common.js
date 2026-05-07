@@ -9,8 +9,7 @@ var SITE = {
     { href: 'support.html', label: 'サポート' },
     { href: 'privacy.html', label: 'プライバシー' }
   ],
-  appStoreUrl: '#',
-  appStoreLabel: '近日公開予定',
+  appStoreUrl: 'https://apps.apple.com/jp/app/tripphoto/id6761543106',
   supportEmail: 'aabce.apps.support@gmail.com',
   icon: 'icon_masked.png'
 };
